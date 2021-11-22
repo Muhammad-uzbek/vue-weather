@@ -121,4 +121,13 @@ export default {
         line-height: 50px;
         text-align: center;
     }
+@media screen and (max-width: 680px) {
+    #card{
+        width:250px;
+    }
+    .img-wrap{
+        width:250px;
+    }
+    
+}
 </style>
