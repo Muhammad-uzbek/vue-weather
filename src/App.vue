@@ -140,5 +140,27 @@ body{
 .side ul li:hover{
   background: rgba(172, 172, 172, 0.705);
 }
+@media screen and (max-width: 680px){
+  #app{
+    flex-direction: column;
+    height: auto;
+  }
+  .main{
+    width: 100%;
+  }
+  .side{
+    width: 100%;
+    margin-top: 20px;
+  }
+  .search-bar{
+    width: 250px;
+  }
+  .card{
+    width: 250px;
+  }
+  .side ul li{
+    width: 50%;
+  }
+}
 </style>
 
