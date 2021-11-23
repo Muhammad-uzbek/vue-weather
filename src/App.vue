@@ -8,7 +8,7 @@
           placeholder="Search.." 
           v-model="query"
           @keypress="fetchWeather"/>
-          <button @click"fetchOnClick">Search</button>
+          <button @click="fetchOnClick">Search</button>
       </div>
       <div class="card-box">
         <Card  v-if="weather!=''" class="card" :weatherprop="weather"/>
@@ -62,28 +62,23 @@ export default {
           .then(res =>{
             return res.json()
           }).then(this.setResults)
-        }
-      }
+      },
       setResults(results){
         this.weather = results;
       }
-    },
-
+  }
 }
 </script>
 
 <style>
-
 *{
     margin:0;
     padding: 0;
     
 }
-
 body{
     font-family: 'montserrat', sans-serif;
 }
-
 #app{
   background-image:url('./assets/cold-bg.jpg');
   background-size: cover;
@@ -93,8 +88,6 @@ body{
   height: 100vh;
   display: flex;
 }
-
-
 #app.warm{
   background-image: url('./assets/warm-bg.jpg');
 }
@@ -106,13 +99,19 @@ body{
   display:flex;
   justify-content:center;
 }
-.card-box button{
-  width: 120px;
-  height: 25px;
+.search-box button{
+  width: 100px;
+  height: 30px;
   border:none;
-  background-color: green;
+  background-color: rgb(66, 152, 66);
+  color: white;
   outline:none;
   border-radius:20px;
+  margin-top: 15px;
+}
+.search-box button:hover{
+  background-color: rgb(70, 116, 70);
+  color: white;
 }
 .main{
   display: flex;
@@ -174,7 +173,17 @@ body{
     margin-top: 20px;
   }
   .search-bar{
-    width: 250px;
+    width: 220px;
+  }
+  .search-box button{
+    width: 80px;
+    height: 30px;
+    border:none;
+    background-color: rgb(66, 152, 66);
+    color: white;
+    outline:none;
+    border-radius:20px;
+    margin-top: 15px;
   }
   .card{
     width: 250px;
@@ -184,4 +193,3 @@ body{
   }
 }
 </style>
-
