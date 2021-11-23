@@ -100,7 +100,7 @@ body{
 }
 .card-box{
   margin-top: 10px;
-  width: 400px;
+  width: 450px;
   height: auto;
   min-height: 100px;
   display:flex;
