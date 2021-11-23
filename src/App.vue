@@ -143,7 +143,7 @@ body{
 @media screen and (max-width: 680px){
   #app{
     flex-direction: column;
-    height: auto;
+    height: 100vh;
   }
   .main{
     width: 100%;
