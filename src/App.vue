@@ -8,6 +8,7 @@
           placeholder="Search.." 
           v-model="query"
           @keypress="fetchWeather"/>
+          <button @click"fetchOnClick">Search</button>
       </div>
       <div class="card-box">
         <Card  v-if="weather!=''" class="card" :weatherprop="weather"/>
@@ -56,6 +57,13 @@ export default {
           }).then(this.setResults)
         }
       },
+      fetchOnClick(){
+          fetch(`${this.url_base}weather?q=${this.query}&units=metric&appid=${this.api_key}&lang=pt_br`)
+          .then(res =>{
+            return res.json()
+          }).then(this.setResults)
+        }
+      }
       setResults(results){
         this.weather = results;
       }
@@ -92,11 +100,19 @@ body{
 }
 .card-box{
   margin-top: 10px;
-  width: 300px;
+  width: 400px;
   height: auto;
   min-height: 100px;
   display:flex;
   justify-content:center;
+}
+.card-box button{
+  width: 120px;
+  height: 25px;
+  border:none;
+  background-color: green;
+  outline:none;
+  border-radius:20px;
 }
 .main{
   display: flex;
