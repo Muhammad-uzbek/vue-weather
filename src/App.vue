@@ -9,7 +9,9 @@
           v-model="query"
           @keypress="fetchWeather"/>
       </div>
-      <Card  v-if="weather!=''" class="card" :weatherprop="weather"/>
+      <div class="card-box">
+        <Card  v-if="weather!=''" class="card" :weatherprop="weather"/>
+      </div>
     </div>
       <div class="side">
         <ul>
@@ -88,10 +90,13 @@ body{
 #app.warm{
   background-image: url('./assets/warm-bg.jpg');
 }
-.card{
+.card-box{
   margin-top: 10px;
   width: 300px;
   height: auto;
+  min-height: 100px;
+  display:flex;
+  justify-content:center;
 }
 .main{
   display: flex;
